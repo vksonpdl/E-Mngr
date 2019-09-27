@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>E-Mngr: Added Expense</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <!-- use the font -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+           
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #777777">
+
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <tr>
+            <td align="center" bgcolor="#78ab46" style="padding: 20px 0 30px 0;">
+            	<h1>
+               <a href="https://emngr.herokuapp.com"> E-Mngr</a>
+           		</h1>
+           		<h3>[ Expense Added Notification ]</h3>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#eaeaea" style="padding: 40px 30px 40px 20%; font-size: 18px;">
+                <p>Dear E-Mngr User,</p>
+                <p>[[${from}]] added an expense of [[${amount}]] for [[${category}]] today </p>
+                <br/>	
+                <hr/>
+                <p>Thanks</p>
+                <p><b>E-Mngr</b> - <a href="https://emngr.herokuapp.com">  https://emngr.herokuapp.com</a></p>
+                <p>Date: [[${date}]]</p>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#777777" style="padding: 30px 30px 30px 30px;">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+    <!-- use the font -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+           
+        }
+
+     
+
+#customers td { padding: 15px;
+  text-align: left;}
+  #customers th{
+  	 background-color: #4CAF50;
+  color: black;
+  padding: 15px;
+  text-align: center;
+  }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #777777">
+
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="border-collapse: collapse;">
+        <tr>
+            <td align="center" bgcolor="#78ab46" style="padding: 20px;">
+            	<h1>
+               <a href="https://emngr.herokuapp.com"> E-Mngr</a>
+           		</h1>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#eaeaea" style="padding-bottom: 20px; font-size: 18px;">
+            	<p align="center" style="font-size: 25px;">[[${title}]]</p>
+            	<table align="center" style="padding-bottom: 2px;" cellpadding="3px;">
+            		<tr>
+            			<td>Total Expense: </td><td> [[${te}]]</td>
+            		</tr><tr>
+            			<td>Average Expense: </td><td> [[${ae}]]</td>
+            		</tr>
+            	</table>
+
+            	<table  id="customers" align="center" style="border-style: solid; border-width: 1px" >
+            		<tr>
+            			<th rowspan="2">User</th>
+            			<th colspan="2">Expense</th>
+            			<th colspan="2">Amount Balancer</th>
+            			<th colspan="2">Total</th>
+            		</tr>
+            		<tr>
+            			
+            			<th>Paid</th>
+            			<th>NTB Paid</th>
+            			<th>Paid</th>
+            			<th>NTB Paid</th>
+            			<th>Paid</th>
+            			<th>NTB Paid</th>
+            		</tr>
+            		<tr th:each="dataind : ${data.dat}">
+            			<td>[[${dataind.un}]]</td>
+            			<td>[[${dataind.e_p}]]</td>
+            			<td>[[${dataind.e_np}]]</td>
+            			<td>[[${dataind.ab_p}]]</td>
+            			<td>[[${dataind.ab_np}]]</td>
+            			<td style="color: green">[[${dataind.t_p}]]</td>
+            			<td style="color: red">[[${dataind.t_np}]]</td>
+            		</tr>
+
+
+            	</table>
+            	<small><p align="center">Data Generated @ [[${date}]]</p></small>
+            </td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#777777" style="padding: 30px 30px 30px 30px;">
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

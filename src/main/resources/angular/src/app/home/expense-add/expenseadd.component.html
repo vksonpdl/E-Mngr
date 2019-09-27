@@ -1,0 +1,60 @@
+
+<h2 style="text-align: center">
+    <span class="badge badge-secondary">
+        Add your Expense here
+    </span>
+  </h2>
+
+  <div class="alert-success" *ngIf="expnse_add_response.rmessage=='SUCCESS'">
+    <strong>Expense Added ! </strong> 
+  </div>
+
+  <div class="alert-danger" *ngIf="expnse_add_response.rmessage=='EXCEPTION'">
+    <strong>Exception Occured: </strong> {{expnse_add_response.rexception}}
+  </div>
+
+  <div class="alert-danger" *ngIf="expnse_add_response.rmessage=='INV_UN'">
+    <strong>Please Login/Reload the Application</strong> 
+  </div>
+
+  <div class="alert-warning" *ngIf="expnse_add_response.rmessage=='INV_CAT'">
+    <strong>Invalid Category! </strong> Please Select Proper Category
+  </div>
+
+    <div class="alert-warning" *ngIf="expnse_add_response.rmessage=='INV_EXP'">
+      <strong>Invalid Amount! </strong> Please Provide valid Amount - Amount should be a number and grater than 0.1 
+    </div>
+
+    
+
+
+
+<div *ngIf="appLoaded=='YES';else elseBlock">
+<form #f="ngForm" (ngSubmit) = "onSubmit(data)">
+<div class="form-group">
+    <label for="sel1"> <b>Category</b></label>
+    <select class="form-control" id="sel1" [(ngModel)]="data.cat" name="test">
+      <option *ngFor="let category of cat"   name="category"> {{category}}</option>
+    </select>
+  </div> 
+  <div class="form-group">
+    <label for="usr"><b>Amount</b></label>
+    <input type="number" class="form-control" id="usr" name="amount" [(ngModel)]="data.exp">
+  </div>
+
+
+ 
+  <div class="form-group">
+  <button type="submit" class="btn btn-success btn-block">Submit</button> 
+  <button type="button" class="btn btn-info btn-block">Clear</button> 
+  </div>
+</form>
+</div>
+<ng-template #elseBlock>
+ 
+    <div class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+      </div>
+
+</ng-template>

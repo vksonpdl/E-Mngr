@@ -1,0 +1,74 @@
+<h2 style="text-align: center">
+  <span class="badge badge-secondary">
+      Previous Month Expense
+  </span>
+</h2>
+
+
+<div *ngIf="appLoaded=='YES';else elseBlock">
+
+<div *ngIf="exp.exp.length > 0">
+  
+      
+          <div class="alert alert-info">
+              <div class="row" style="text-align: center">
+                  <div class="col-sm-4">
+              Month: <strong> {{exp.mnth}}/{{exp.yr}} </strong>
+                  </div>
+                  <div class="col-sm-4">
+                      Total Expense: <strong> {{exp.texpense}} </strong>
+                          </div>
+                          <div class="col-sm-4">
+                              Average Expense: <strong> {{exp.avgexp}} </strong>
+                                  </div>
+
+  
+  
+  
+</div>
+
+<!-- 
+    END
+  -->
+  </div>
+
+
+
+  
+    <hr/>
+    <p>
+  Below Content is best viewable in Large Screen
+    </p>
+   
+
+
+  <table class="table table-dark table-striped">
+
+    <thead>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Category</th>
+      <th>Date</th>
+    </thead>
+      <tbody>
+        <tr *ngFor="let data of exp.exp">
+          <th> {{data.un}}</th>
+          <td>{{data.exp}}</td>
+          <td>{{data.cat}}</td>
+          <td>{{data.dy}}/{{data.mnth}}/{{data.yr}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="alert alert-warning" *ngIf="exp.exp.length < 1">
+  <strong>Warning!</strong> No Data Found
+  </div>
+</div>
+
+
+<ng-template #elseBlock> 
+    <div class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+      </div>
+</ng-template>

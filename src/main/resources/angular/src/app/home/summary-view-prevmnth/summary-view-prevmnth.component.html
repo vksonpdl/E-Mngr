@@ -1,0 +1,60 @@
+<h2 style="text-align: center">
+  <span class="badge badge-secondary">
+      Previous Month Expense Summary
+  </span>
+</h2>
+
+<div *ngIf="appLoaded=='YES';else elseBlock" style="margin-bottom: 10px;">
+  <div *ngIf="exp.dat.length > 0">
+
+    <div class="alert alert-info">
+        Month: <strong> {{exp.mnth}}/{{exp.yr}} </strong>
+      </div>
+
+    <table class="table table-dark table-striped">
+
+        <thead>
+          <th>User</th>
+          <th>E_P</th>
+          <th>AB_P</th>
+          <th>E_NP</th>
+          <th>AB_NP</th>
+          <th>T_NP</th>
+        </thead>
+          <tbody>
+            <tr *ngFor="let data of exp.dat">
+              <th> {{data.un}}</th>
+              <th> {{data.e_p}}</th>
+              <td>{{data.ab_p}}</td>
+              <td>{{data.e_np}}</td>
+              <td>{{data.ab_np}}</td>
+              <td style="color: red">{{data.t_np}}</td>
+            </tr>
+          </tbody>
+        </table>
+      
+
+<hr/>
+       <strong> View Detailed Summary</strong><br/>
+
+       <div class="list-group">
+          <a href="/view-expense-prevmnth" class="list-group-item list-group-item-action">Expense Details</a>
+          <a href="/view-amntblncr-prevmnth" class="list-group-item list-group-item-action">Amount Balancer Details</a>
+          
+        </div>
+      </div>
+
+
+        <div class="alert alert-warning" *ngIf="exp.dat.length < 1">
+          <strong>Warning!</strong> No Data Found
+        </div>
+
+
+</div> 
+
+<ng-template #elseBlock> 
+    <div class="d-flex align-items-center">
+        <strong>Loading...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+      </div>
+</ng-template>

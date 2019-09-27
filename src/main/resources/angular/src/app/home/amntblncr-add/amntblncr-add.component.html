@@ -1,0 +1,69 @@
+
+<h2 style="text-align: center">
+  <span class="badge badge-secondary">
+    Add to Amount Balancer
+  </span>
+</h2>
+
+<div class="alert-success" *ngIf="resp.rmessage=='SUCCESS'">
+    <strong>Amount Added ! </strong> 
+  </div>
+
+  <div class="alert-danger" *ngIf="resp.rmessage=='EXCEPTION'">
+    <strong>Exception Occured: </strong> {{resp.rexception}}
+  </div>
+
+  <div class="alert-danger" *ngIf="resp.rmessage=='INV_UN'">
+    <strong>Please Login/Reload the Application</strong> 
+  </div>
+
+  <div class="alert-warning" *ngIf="resp.rmessage=='INV_UN_TO'">
+    <strong>Invalid 'Paid To' </strong> Please Select to whom you are paying
+  </div>
+
+    <div class="alert-warning" *ngIf="resp.rmessage=='INV_RSN'">
+      <strong>Invalid Reason! </strong> Please Provide Proper Reason, Length should be grater than 2 and less than 11 
+    </div>
+    <div class="alert-warning" *ngIf="resp.rmessage=='INV_AMNT'">
+      <strong>Invalid Amount! </strong> Please Provide Proper Amount, Amount should be grater than 0.1 
+    </div>
+
+
+<div *ngIf="appLoaded=='YES';else elseBlock">
+
+    <form #f="ngForm" (ngSubmit) = "onSubmit(data)">
+        <div class="form-group">
+            <label for="sel1"> <b>Paid to</b></label>
+            <select class="form-control" id="sel1" [(ngModel)]="data.un_to" name="test">
+              <option *ngFor="let usr of usrs.un_list"   name="user"> {{usr}}</option>
+            </select>
+          </div> 
+
+          <div class="form-group">
+              <label for="usr"><b>Reason</b></label>
+              <input type="text" class="form-control" id="rsn" name="amount" [(ngModel)]="data.rsn">
+            </div>
+
+          <div class="form-group">
+              <label for="usr"><b>Amount</b></label>
+              <input type="number" class="form-control" id="amnt" name="amount" [(ngModel)]="data.amnt">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success btn-block">Submit</button> 
+                <button type="button" class="btn btn-info btn-block">Clear</button> 
+                </div>
+           
+
+      </form>
+
+</div>
+
+<ng-template #elseBlock>
+ 
+  <div class="d-flex align-items-center">
+      <strong>Loading...</strong>
+      <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+
+</ng-template>

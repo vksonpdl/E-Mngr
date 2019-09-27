@@ -1,0 +1,52 @@
+<div class="jumbotron text-center" style="margin-bottom:0">
+    <h1>e-Mngr</h1>
+    
+    
+  </div>
+
+  <div class="container" style="margin-top:30px">
+   <h3 style="text-align: center;">Login Here</h3>
+
+   <div *ngIf="loginMsg=='PWD_CHANGE'" class="alert alert-success">
+    <strong>Success!</strong> You Have successfully changed your Password! Login Again.
+  </div>
+
+  <form #f="ngForm" (ngSubmit) = "onSubmit(data)">
+    <div class="input-group mb-3 input-group-med">
+      <div class="input-group-prepend">
+        <span class="input-group-text" >Username</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="data.un"  name="f.un">
+    </div>
+    <div class="input-group mb-3 input-group-med">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Password</span>
+        </div>
+        <input type="password" class="form-control" [(ngModel)]="data.pwd" name="pwd">
+      </div>
+
+      
+
+
+<div *ngIf="data.rmessage=='FAIL'" style="text-align: center; margin-top: 10x;margin-bottom: 10px; color: orange">
+        
+        Invalid Credentials, Please try again !
+    </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success btn-block">Login</button> 
+        <button type="button" class="btn btn-info btn-block" (click) = "clear()">Clear</button> 
+      
+        </div>
+  </form> 
+  <div style="text-align: center; margin-top: 10x;margin-bottom: 10px;">
+    Forgot your password? Click <a href="" title="Not Available Currently">Here</a>
+</div>
+  </div>
+
+
+  <div class="jumbotron text-center" style="margin-bottom:0">
+    <p>Powered by : Vikas Patoli</p>
+    <p><a href="https://www.linkedin.com/in/vikas-patoli-60116b44/">LinkedIn</a></p>
+  </div>
+  
