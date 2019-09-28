@@ -1,3 +1,4 @@
+
 # Database Schema Definition
 
 ## em-credentials
@@ -45,4 +46,28 @@
         "yr" : "2019",
         "tmstmp" : "1567967957371",
         "_class" : "com.example.emngr.mongocoll.AmountBalancerCollection"
+    }
+## em-expense-summary
+
+> This Collection contain  Summary of both Expense and Amount Balancer
+
+    {
+        "_id" : ObjectId("5d6b6e2d9cc21a00044ca845"),
+    "un" : "vksonpdl",
+    "mnth" : "9",
+    "yr" : "2019",
+    "e_paid" : 2434.0,
+    "ab_paid" : 466.0,
+    "e_ntb_paid" : -1756.75,
+    "ab_ntb_paid" : -466.0,
+    "_class" : "com.example.emngr.mongocoll.MonthExpenseCummaryCollection"
+}  
+## em-category
+
+> This Collection contain List of Categories for Expense
+
+    {
+        "_id" : ObjectId("5d6a5430bc56e856e187e029"),
+        "cat" : "FastAndFresh",
+        "_class" : "com.example.emngr.mongocoll.CategoryCollection"
     }
