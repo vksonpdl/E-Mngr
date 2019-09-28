@@ -2,7 +2,7 @@
 **Manage Room Expense Online**
 
 > This Contain Both Web Application and Telegram bot to handle  Room
-> Expense online and generate summery for the month via E-mail/Telegram
+> Expense online and generate summary for the month via E-mail/Telegram
 > and Web Application
 
  
@@ -26,3 +26,6 @@
 |View Previous Month Expense| [x] | [x] |
 |View Current Month Amount Balancer| [x] | [x] |
 |View Previous Month Amount Balancer| [x] | [x] |
+|View Current Month Complete Summary| [x] | [x] |
+|View Previous Month Complete Summary| [x] | [x] |
+|Change Password| [x] | [x] |
