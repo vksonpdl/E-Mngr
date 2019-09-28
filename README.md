@@ -1,3 +1,4 @@
+
 # E-Mngr
 **Manage Room Expense Online**
 
@@ -29,3 +30,9 @@
 |View Current Month Complete Summary| [x] | [x] |
 |View Previous Month Complete Summary| [x] | [x] |
 |Change Password| [x] | [x] |
+
+## DataBase
+
+> MongoDB 3.6.12 is used as Back-end Database
+
+[Database Schema Definition](/docs/DB.md)
